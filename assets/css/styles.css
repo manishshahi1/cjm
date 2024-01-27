@@ -164,38 +164,46 @@ header {
   text-decoration: none;
   display: inline-block; /* Ensures that the animation works correctly */
   animation: pulse 1s infinite;
-  color: blueviolet; /* Set the color of the link */
+  /* color: blueviolet; Set the color of the link */
   background-color: aliceblue;
   padding: 15px;
   border-radius: 100px;
 }
 
+
 .pulse:hover {
   animation-play-state: paused;
 }
-
 
 .container-fluid {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
 }
-
- .colz-container {
+.colz-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.colz-container-gr {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: radial-gradient(circle, #c9c9ff, #FFFFFF);
+  box-sizing: border-box;
 }
 
 .colz {
   box-sizing: border-box;
-  flex: 1;
-  margin: 10px;
-  padding: 20px;
-  border: 1px solid #ddd;
-  background-color: #f9f9f9;
+  flex: 1 0 calc(25% - 40px); /* Adjust the width based on your design */
+  margin: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fff;
   border-radius: 15px;
   text-align: center;
+  padding: 55px;
 }
 
 @media (max-width: 768px) {
@@ -204,16 +212,40 @@ header {
   }
 
   .colz {
-    flex: 1 0 100%;
+    flex: 1 0 calc(100% - 20px); /* Adjust the width for smaller screens */
+    margin: 10px; /* Adjust the margin for smaller screens */
   }
 }
 
 
-.violet-box {
-  background-color: rgb(74, 0, 128);
-  color: goldenrod;
-  padding: 40px 50px;
+
+ @media screen and (max-width: 767px) {
+      /* Two columns on smaller screens */
+      table {
+        display: block;
+      }
+
+      td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+
+.text-gradient {
+  background: linear-gradient(90deg, #8e54e9 0%, #4776e6 94.27%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.rounded-box {
+background: radial-gradient(circle at 100% 50%, #eee, #FFFFFF);
+  color: black;
+  padding: 55px;
   text-align: center;
+  margin:10px;
+  border-radius: 50px;
 }
 
 .center_box {
@@ -272,6 +304,7 @@ header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  color:#fff;
 }
 
 .right_arrow_svg {
